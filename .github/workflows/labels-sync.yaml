@@ -1,0 +1,20 @@
+name: "🏷️ Synchronize labels"
+on:
+  workflow_dispatch:
+    inputs:
+      delete_other_labels:
+        description: "Delete other labels"
+        required: true
+        type: boolean
+
+jobs:
+  labels:
+    name: "Synchronize labels"
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Synchronize labels"
+      uses: EndBug/label-sync@v2
+      with:
+        config-file: https://raw.githubusercontent.com/innofactororg/gh-config/main/labels.yml
+        delete-other-labels: ${{ inputs.delete_other_labels }}
+        token: ${{ secrets.GITHUB_TOKEN }}

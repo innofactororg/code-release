@@ -1,0 +1,25 @@
+name: Release
+author: Innofactor Plc
+description: Release a new version in a GitHub repository
+inputs:
+  github-token:
+    description: The GitHub token for creating the release, defaults to using secrets.GITHUB_TOKEN.
+    required: false
+    default: ${{ github.token }}
+  draft:
+    description: Create a draft (unpublished) release.
+    required: false
+    default: false
+  prerelease:
+    description: Identify the release as a prerelease.
+    required: false
+    default: false
+  tag:
+    description: The tag to release.
+    required: true
+runs:
+  using: node16
+  main: dist/index.js
+branding:
+  icon: package
+  color: orange
