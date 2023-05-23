@@ -27,7 +27,7 @@ jobs:
       contents: write
     steps:
     - name: Release
-      uses: innofactororg/gha-release@v1
+      uses: innofactororg/github-action-create-release@v1
       with:
         # The GitHub token for creating the release.
         #
