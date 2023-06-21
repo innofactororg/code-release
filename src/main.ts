@@ -1,6 +1,6 @@
 import {getInput, setFailed} from '@actions/core'
-import ensureError from 'ensure-error'
 
+import {processError} from './error-tools'
 import {newRelease} from './release'
 
 async function run(): Promise<void> {
@@ -28,9 +28,8 @@ async function run(): Promise<void> {
       token,
       tag
     })
-  } catch (_error: unknown) {
-    const error = ensureError(_error)
-    setFailed(error)
+  } catch (error: unknown) {
+    throw new Error(processError(error, true))
   }
 }
 void run()
