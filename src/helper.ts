@@ -73,7 +73,7 @@ export async function createRelease(
       draft,
       generate_release_notes: true,
       make_latest: 'true',
-      name: `Release ${tag_name.replace(/^v/, '')}`,
+      name: `${tag_name.replace(/^v/, '')}`,
       prerelease,
       previous_tag_name,
       owner,
