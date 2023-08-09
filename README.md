@@ -1,4 +1,4 @@
-# Release
+# Code Release
 
 This action can be used to release a new version in a GitHub repository.
 
@@ -27,7 +27,7 @@ jobs:
       contents: write
     steps:
     - name: Release
-      uses: innofactororg/github-action-create-release@v1
+      uses: innofactororg/code-release@v1
       with:
         # The GitHub token for creating the release.
         #
@@ -54,7 +54,7 @@ jobs:
 
 ```yaml
 name: "🎉 Release"
-run-name: "Create release ${{ github.event.inputs.tag }}"
+run-name: "Release ${{ github.event.inputs.tag }}"
 
 on:
   workflow_dispatch:
@@ -76,7 +76,7 @@ jobs:
       contents: write
     steps:
     - name: "Release"
-      uses: innofactororg/github-action-create-release@v1
+      uses: innofactororg/code-release@v1
       with:
         tag: ${{ github.event.inputs.tag }}
 ```
