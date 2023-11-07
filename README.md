@@ -27,7 +27,7 @@ jobs:
       contents: write
     steps:
     - name: Release
-      uses: innofactororg/code-release@v1
+      uses: innofactororg/code-release@v2
       with:
         # The GitHub token for creating the release.
         #
@@ -76,7 +76,7 @@ jobs:
       contents: write
     steps:
     - name: "Release"
-      uses: innofactororg/code-release@v1
+      uses: innofactororg/code-release@v2
       with:
         tag: ${{ github.event.inputs.tag }}
 ```
